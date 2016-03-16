@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- 开启 SpringMVC注解扫描 -->
+	<mvc:annotation-driven />
+
+	<!-- 注解类扫描 -->
+	<context:component-scan base-package="com.alphadon.*" ></context:component-scan>
+
+	<!-- 加载项目 properties -->
+	<!-- 加载配置文件 -->
+    <!-- <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:props/system.properties</value>
+               	<value>classpath:props/dcm.properties</value>
+               	<value>classpath:props/db.properties</value>
+            </list>
+        </property>
+    </bean> -->
+
+	<!-- 配置spring 同步线程池(主要用于处理启动和关闭服务器时的任务) -->
+	<bean id="synTaskExecutor" class="org.springframework.core.task.SyncTaskExecutor" />
+
+	<!-- 配置spring 异步线程池(主要用于处理数据上报的处理任务,一些定时任务等) -->
+	<!-- <bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		线程池维护线程的最少数量
+		<property name="corePoolSize" value="500" />
+		线程池维护线程所允许的空闲时间
+		<property name="keepAliveSeconds" value="300" />
+		线程池维护线程的最大数量
+		<property name="maxPoolSize" value="1000" />
+		线程池所使用的缓冲队列
+		<property name="queueCapacity" value="2000" />
+		线程池对拒绝任务(无线程可用)的处理策略
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+	</bean> -->
+	
+	<!-- 国际化 -->
+	<!-- <bean id="fixedLocaleResolver"
+		class="org.springframework.web.servlet.i18n.FixedLocaleResolver">
+		<property name="defaultLocale" value="${locale}" />
+	</bean> -->
+	<!-- RocketMQ Configuration -->
+	<!-- producer -->
+	<!-- <bean id="autoProducer" class="com.dnion.auto.message.AutoProducer"
+		init-method="init"
+		destroy-method="destroy"
+		scope="singleton">
+		<property name="namesrvAddr" value="${namesrvAddr}"/>
+		<property name="producerGroup" value="auto_web_producer"></property>
+	</bean> -->
+	<!-- consumer -->
+	<!-- <bean id="autoPushConsumer" class="com.dnion.auto.message.AutoPushConsumer"
+		init-method="init"
+		destroy-method="destroy"
+		scope="singleton">
+		<property name="namesrvAddr" value="${namesrvAddr}"/>
+		<property name="consumerGroup" value="auto_web_consumer"></property>
+	</bean> -->
+
+	<!-- 配置哪些类的方法进行事务管理 -->
+	<!-- <aop:config proxy-target-class="true"> <aop:advisor advice-ref="txAdvice" 
+		pointcut="execution(* com.dnion.security.services.*.*.*(..))" /> <aop:advisor 
+		advice-ref="txAdvice" pointcut="execution(* com.dnion.*.security.*.*(..))" 
+		/> </aop:config> -->
+
+	<!-- 调用Dubbo传递登陆用户名的AOP
+	<aop:config>
+		<aop:aspect id="aopCallDubboProviderAspecty" ref="aopCallDubboProvider">
+			所有调用 dnionConfigManage-api 
+			<aop:pointcut id="callProvider" expression="execution(* com.dnion.dcm.service.*.*(..))"></aop:pointcut>
+			<aop:before method="beforeCall" pointcut-ref="callProvider"></aop:before>
+		</aop:aspect>
+	</aop:config> -->
+
+	<!-- cas 认证模块配置
+	<import resource="applicationContext_security.xml" />
+	dnion webservice 配置
+	<import resource="applicationContext_webService.xml" />
+	加载dubbo Service[如果没有dubbo的话，这下面这行注释掉，且把web.xml里的spring.profiles.active改为nodubbo，应用就可以正常启动了]
+	<import resource="applicationContext_consumer.xml" />
+	database 链接配置模块设置
+	<import resource="applicationContext_dataSource.xml"/>
+	切面配置
+	<import resource="applicationContext_aop.xml"/> -->
+</beans>
