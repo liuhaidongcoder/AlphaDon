@@ -1,0 +1,29 @@
+<%@ page language="java" import="java.util.*,com.dnion.dcm.utils.*,com.dnion.dcm.entity.*" pageEncoding="UTF-8"%>
+<% ResourceBundle resource = ResourceBundle.getBundle("/props/dcm");%>
+
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/bootstrap.min.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/font-awesome.min.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/animate.min.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/style.min.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/style/around.css?v=<%=resource.getString("version") %>" />
+
+<!-- B Table -->
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/plugins/bootstrap-table/bootstrap-table.min.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<!-- Summernote -->
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/plugins/summernote/summernote-bs3.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/thirdparty/css/plugins/summernote/summernote.css?v=<%=resource.getString("version") %>" rel="stylesheet">
+
+<!-- layer -->
+<!-- <link rel="stylesheet" type="text/css" href="resources/thirdparty/js/plugins/layer/skin/layer.css"> -->
+<!-- 全局js -->
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/jquery-2.1.1.min.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/bootstrap.min.js?v=<%=resource.getString("version") %>"></script>
+
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='<%=request.getContextPath()%>/resources/thirdparty/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	
+	var CONTEXT_PATH = '<%=request.getContextPath()%>';
+	var CAS_LINK = '<%=resource.getString("casServerUrlPrefix") %>';
+	var CAS_EMAIL = '<%=((BaseUser)session.getAttribute(SessionKeys.USER)).getEmail() %>';
+	var PLATFORM_LINK = '<%=resource.getString("platform.link") %>';
+</script>

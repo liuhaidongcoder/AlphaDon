@@ -1,0 +1,18 @@
+<%@ page language="java" import="java.util.*,com.dnion.dcm.utils.*,com.dnion.dcm.entity.*" pageEncoding="UTF-8"%>
+<% ResourceBundle resource = ResourceBundle.getBundle("/props/dcm");%>
+<!-- basic scripts -->
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/bootstrap-table/bootstrap-table.min.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/summernote/summernote.min.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/summernote/summernote-zh-CN.js?v=<%=resource.getString("version") %>"></script>
+<!-- 文件对比 diff_match_patch -->
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/diff_match_patch/diff_match_patch.js?v=<%=resource.getString("version") %>"></script>
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js?v=<%=resource.getString("version") %>"></script>
+<!-- layer -->
+<script src="<%=request.getContextPath()%>/resources/thirdparty/js/plugins/layer/layer.js?v=<%=resource.getString("version") %>"></script>
+<!-- commonUtils -->
+<script src="<%=request.getContextPath()%>/resources/script/utils/commonUtils.js?v=<%=resource.getString("version") %>"></script>
+
+
+

@@ -1,0 +1,7 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+			<div class="pull-right">
+                    <a href="/dnionConfigManage">分布式配置管理平台</a>
+                </div>
+                <div>
+                    <strong>Copyright</strong> Dnion &copy; 2015-2015
+                </div>

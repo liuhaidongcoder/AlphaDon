@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/research/!svn/ver/21064/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/research/!svn/ver/20336/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/footer.jsp
+END
+sidebar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/research/!svn/ver/20336/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/sidebar.jsp
+END
+scripts-top.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/research/!svn/ver/21787/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/scripts-top.jsp
+END
+breadcrumbs.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/research/!svn/ver/20336/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/breadcrumbs.jsp
+END
+navbar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/research/!svn/ver/21064/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/navbar.jsp
+END
+scripts-bottom.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/research/!svn/ver/20873/INTEGRATION_PRODUCT/dnionConfigManage/web/src/branches/1.1.0/src/main/webapp/WEB-INF/view/include/scripts-bottom.jsp
+END
