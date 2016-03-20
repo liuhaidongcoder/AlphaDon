@@ -1,33 +1,26 @@
 package com.alphadon.controller;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
-/*
- * @author alphadon
- * 
- */
 @Controller
-public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/*@RequestMapping()
-	public ModelAndView showLogin() {
-		ModelAndView view = new ModelAndView();
-		view.setViewName("index");
-		return view;
-	}*/
-	@RequestMapping({"/","/index"})
+public class HomeController extends BasicContoller{
+	@RequestMapping({"/home"})
 	public ModelAndView showHomePage() {
-		
+		HttpSession session = getRequest().getSession();
+		System.out.println(session.getAttribute("userName"));
 		ModelAndView view = new ModelAndView();
-		view.setViewName("index");
+		view.setViewName("home");
+		return view;
+	}
+	@RequestMapping({"/blogEdit"})
+	public ModelAndView showBlogEditPage() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("blogEdit");
 		return view;
 	}
 }

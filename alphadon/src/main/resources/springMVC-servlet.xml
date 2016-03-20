@@ -23,5 +23,16 @@
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
           
     </bean>
-      
+       <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="prefixJson" value="false"/>
+        <property name="supportedMediaTypes" value="application/json"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter" />
+            </list>
+       </property>
+    </bean>
 </beans>
