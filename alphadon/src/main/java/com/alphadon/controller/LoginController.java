@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alphadon.service.UserValidateService;
-import com.alphadon.service.impl.UserValidateServiceImpl;
+//import com.alphadon.service.UserValidateService;
+//import com.alphadon.service.impl.UserValidateServiceImpl;
 
 
 /*
@@ -21,18 +21,18 @@ import com.alphadon.service.impl.UserValidateServiceImpl;
  * 
  */
 @Controller
-public class LoginController extends BasicContoller{
+public class LoginController extends BasicController{
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	UserValidateService userValidate;
+	//UserValidateService userValidate;
 
-	@RequestMapping({"/","/login"})
+	@RequestMapping({"/","/index"})
 	public ModelAndView showHomePage() {
 		
 		ModelAndView view = new ModelAndView();
-		view.setViewName("login");
+		view.setViewName("index");
 		logger.info("进入登录页面");
 		return view;
 	}
@@ -43,7 +43,7 @@ public class LoginController extends BasicContoller{
 		ModelAndView view = new ModelAndView();
 		//验证用户名是否合法
 		//validateUser
-		if(userValidate.isInvalidUser(userName,userPass)){//验证合法进入主页
+		/*if(userValidate.isInvalidUser(userName,userPass)){//验证合法进入主页
 			//设置session
 			HttpSession session = getRequest().getSession();
 			session.setAttribute("userName", userName);
@@ -54,7 +54,8 @@ public class LoginController extends BasicContoller{
 		}else{//验证不合法返回登录界面
 			view.setViewName("login");
 			logger.info("进入登录界面");
-		};			
+		};*/
+		view.setViewName("login");
 		return view;
 	}
 }
