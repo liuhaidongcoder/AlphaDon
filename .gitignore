@@ -2,4 +2,5 @@
 /target
 alphadon/alphadon.iml
 alphadon/target/
+*.hello
 *.txt
