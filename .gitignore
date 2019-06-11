@@ -3,4 +3,5 @@
 alphadon/alphadon.iml
 alphadon/target/
 *.world
+*.hello
 *.txt
