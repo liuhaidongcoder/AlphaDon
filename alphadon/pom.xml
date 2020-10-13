@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   
    <properties>
-		<junit.version>4.6</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<springframework.version>4.1.2.RELEASE</springframework.version>
 		<commons.logging>1.1.2</commons.logging>
 		<commons.collections>3.1</commons.collections>
